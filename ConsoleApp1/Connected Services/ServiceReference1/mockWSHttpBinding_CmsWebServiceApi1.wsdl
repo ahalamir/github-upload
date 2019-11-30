@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://versatilesecurity.com/lifecycleapi/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://versatilesecurity.com/lifecycleapi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://versatilesecurity.com/lifecycleapi/Imports">
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2_3_4.xsd" namespace="http://versatilesecurity.com/lifecycleapi/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api.xsd" namespace="http://versatilesecurity.com/serviceapi/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1.xsd" namespace="http://versatilesecurity.com/api/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CmsWebServiceLifecycleApi_CheckOnline_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOnline" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_CheckOnline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_CheckOnline_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://versatilesecurity.com/serviceapi/" name="detail" element="q1:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_CheckPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPing" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_CheckPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_CheckPing_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://versatilesecurity.com/serviceapi/" name="detail" element="q2:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetApiServiceVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApiServiceVersion" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetApiServiceVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApiServiceVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetApiServiceVersion_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://versatilesecurity.com/serviceapi/" name="detail" element="q3:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetCmsServiceVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCmsServiceVersion" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetCmsServiceVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCmsServiceVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetCmsServiceVersion_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://versatilesecurity.com/serviceapi/" name="detail" element="q4:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetClientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetClientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_GetClientInfo_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://versatilesecurity.com/serviceapi/" name="detail" element="q5:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_BatchIssuance_InputMessage">
+    <wsdl:part name="parameters" element="tns:BatchIssuance" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_BatchIssuance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BatchIssuanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_BatchIssuance_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://versatilesecurity.com/serviceapi/" name="detail" element="q6:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_RevokeCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_RevokeCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_RevokeCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://versatilesecurity.com/serviceapi/" name="detail" element="q7:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_InactivateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:InactivateCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_InactivateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InactivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_InactivateCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://versatilesecurity.com/serviceapi/" name="detail" element="q8:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_ActivateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_ActivateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_ActivateCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://versatilesecurity.com/serviceapi/" name="detail" element="q9:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_UnlockCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_UnlockCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnlockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_UnlockCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://versatilesecurity.com/serviceapi/" name="detail" element="q10:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_InitiateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_InitiateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_InitiateCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://versatilesecurity.com/serviceapi/" name="detail" element="q11:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_DeleteCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_DeleteCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceLifecycleApi_DeleteCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://versatilesecurity.com/serviceapi/" name="detail" element="q12:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:portType name="CmsWebServiceLifecycleApi">
+    <wsdl:operation name="CheckOnline">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckOnline" message="tns:CmsWebServiceLifecycleApi_CheckOnline_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckOnlineResponse" message="tns:CmsWebServiceLifecycleApi_CheckOnline_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckOnlineServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_CheckOnline_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPing">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckPing" message="tns:CmsWebServiceLifecycleApi_CheckPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckPingResponse" message="tns:CmsWebServiceLifecycleApi_CheckPing_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckPingServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_CheckPing_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApiServiceVersion">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetApiServiceVersion" message="tns:CmsWebServiceLifecycleApi_GetApiServiceVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetApiServiceVersionResponse" message="tns:CmsWebServiceLifecycleApi_GetApiServiceVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetApiServiceVersionServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_GetApiServiceVersion_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCmsServiceVersion">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetCmsServiceVersion" message="tns:CmsWebServiceLifecycleApi_GetCmsServiceVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetCmsServiceVersionResponse" message="tns:CmsWebServiceLifecycleApi_GetCmsServiceVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetCmsServiceVersionServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_GetCmsServiceVersion_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetClientInfo" message="tns:CmsWebServiceLifecycleApi_GetClientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetClientInfoResponse" message="tns:CmsWebServiceLifecycleApi_GetClientInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetClientInfoServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_GetClientInfo_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchIssuance">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/BatchIssuance" message="tns:CmsWebServiceLifecycleApi_BatchIssuance_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/BatchIssuanceResponse" message="tns:CmsWebServiceLifecycleApi_BatchIssuance_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/BatchIssuanceServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_BatchIssuance_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/RevokeCard" message="tns:CmsWebServiceLifecycleApi_RevokeCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/RevokeCardResponse" message="tns:CmsWebServiceLifecycleApi_RevokeCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/RevokeCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_RevokeCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InactivateCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InactivateCard" message="tns:CmsWebServiceLifecycleApi_InactivateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InactivateCardResponse" message="tns:CmsWebServiceLifecycleApi_InactivateCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InactivateCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_InactivateCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/ActivateCard" message="tns:CmsWebServiceLifecycleApi_ActivateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/ActivateCardResponse" message="tns:CmsWebServiceLifecycleApi_ActivateCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/ActivateCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_ActivateCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/UnlockCard" message="tns:CmsWebServiceLifecycleApi_UnlockCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/UnlockCardResponse" message="tns:CmsWebServiceLifecycleApi_UnlockCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/UnlockCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_UnlockCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitiateCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InitiateCard" message="tns:CmsWebServiceLifecycleApi_InitiateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InitiateCardResponse" message="tns:CmsWebServiceLifecycleApi_InitiateCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InitiateCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_InitiateCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/DeleteCard" message="tns:CmsWebServiceLifecycleApi_DeleteCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/DeleteCardResponse" message="tns:CmsWebServiceLifecycleApi_DeleteCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/DeleteCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceLifecycleApi_DeleteCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

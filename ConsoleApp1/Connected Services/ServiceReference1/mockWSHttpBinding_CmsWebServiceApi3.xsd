@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://versatilesecurity.com/api/" elementFormDefault="qualified" targetNamespace="http://versatilesecurity.com/api/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiApiSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessTicket" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Clsid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+  <xs:element name="GetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="OperationExecutionFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationExecutionFault" nillable="true" type="tns:OperationExecutionFault" />
+  <xs:element name="GetCLID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiClidParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidParam" nillable="true" type="tns:CmsWsApiClidParam" />
+  <xs:complexType name="CmsWsApiQueueId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiQueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+  <xs:element name="GetCLIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCLIDResult" nillable="true" type="tns:CmsWsApiClidResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiClidParam" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidResult" nillable="true" type="tns:CmsWsApiClidResult" />
+  <xs:element name="IsCLID_online">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiClidOnlineParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidOnlineParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidOnlineParam" nillable="true" type="tns:CmsWsApiClidOnlineParam" />
+  <xs:element name="IsCLID_onlineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCLID_onlineResult" nillable="true" type="tns:CmsWsApiClidOnlineResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidOnlineResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Online" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiClidOnlineParam" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidOnlineResult" nillable="true" type="tns:CmsWsApiClidOnlineResult" />
+  <xs:element name="TestPing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiClidPingParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidPingParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="ResetCounter" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidPingParam" nillable="true" type="tns:CmsWsApiClidPingParam" />
+  <xs:element name="TestPingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TestPingResult" nillable="true" type="tns:CmsWsApiClidPingResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidPingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ping" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiClidPingParam" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidPingResult" nillable="true" type="tns:CmsWsApiClidPingResult" />
+  <xs:element name="GetClientInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiClidInfoParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidInfoParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidInfoParam" nillable="true" type="tns:CmsWsApiClidInfoParam" />
+  <xs:element name="GetClientInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetClientInfoResult" nillable="true" type="tns:CmsWsApiClidInfoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiClidInfoResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InterfaceVersion" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiClidInfoParam" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="VersionInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiClidInfoResult" nillable="true" type="tns:CmsWsApiClidInfoResult" />
+  <xs:element name="GetTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiTemplatesParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiTemplatesParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiTemplatesParam" nillable="true" type="tns:CmsWsApiTemplatesParam" />
+  <xs:element name="GetTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTemplatesResult" nillable="true" type="tns:CmsWsApiTemplatesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiTemplatesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiTemplatesParam" />
+      <xs:element minOccurs="0" name="Templates" nillable="true" type="tns:ArrayOfCmsWsApiTemplate" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiTemplatesResult" nillable="true" type="tns:CmsWsApiTemplatesResult" />
+  <xs:complexType name="ArrayOfCmsWsApiTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CmsWsApiTemplate" nillable="true" type="tns:CmsWsApiTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCmsWsApiTemplate" nillable="true" type="tns:ArrayOfCmsWsApiTemplate" />
+  <xs:complexType name="CmsWsApiTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiTemplate" nillable="true" type="tns:CmsWsApiTemplate" />
+  <xs:element name="Issue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiIssueParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiIssueParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="UserDn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiIssueParam" nillable="true" type="tns:CmsWsApiIssueParam" />
+  <xs:element name="IssueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IssueResult" nillable="true" type="tns:CmsWsApiIssueResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiIssueResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiIssueParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiIssueResult" nillable="true" type="tns:CmsWsApiIssueResult" />
+  <xs:element name="BatchIssue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiBatchIssueParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiBatchIssueParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TemplateId" nillable="true" type="q1:ArrayOfunsignedInt" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserDn" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiBatchIssueParam" nillable="true" type="tns:CmsWsApiBatchIssueParam" />
+  <xs:element name="BatchIssueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BatchIssueResult" nillable="true" type="tns:CmsWsApiBatchIssueResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiBatchIssueResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiBatchIssueParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiBatchIssueResult" nillable="true" type="tns:CmsWsApiBatchIssueResult" />
+  <xs:element name="CanPerformTasks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiCanPerformTasksParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiCanPerformTasksParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Csn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfCmsWsApiTask" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiCanPerformTasksParam" nillable="true" type="tns:CmsWsApiCanPerformTasksParam" />
+  <xs:complexType name="ArrayOfCmsWsApiTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CmsWsApiTask" nillable="true" type="tns:CmsWsApiTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCmsWsApiTask" nillable="true" type="tns:ArrayOfCmsWsApiTask" />
+  <xs:complexType name="CmsWsApiTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributes" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Id" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiTask" nillable="true" type="tns:CmsWsApiTask" />
+  <xs:element name="CanPerformTasksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanPerformTasksResult" nillable="true" type="tns:CmsWsApiCanPerformTasksResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiCanPerformTasksResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiCanPerformTasksParam" />
+      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfCmsWsApiTask" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiCanPerformTasksResult" nillable="true" type="tns:CmsWsApiCanPerformTasksResult" />
+  <xs:element name="RevokeCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiRevokeCardParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiRevokeCardParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Csn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Reason" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiRevokeCardParam" nillable="true" type="tns:CmsWsApiRevokeCardParam" />
+  <xs:element name="RevokeCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RevokeCardResult" nillable="true" type="tns:CmsWsApiRevokeCardResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiRevokeCardResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiRevokeCardParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiRevokeCardResult" nillable="true" type="tns:CmsWsApiRevokeCardResult" />
+  <xs:element name="ChangePin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiChangePinParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiChangePinParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiChangePinParam" nillable="true" type="tns:CmsWsApiChangePinParam" />
+  <xs:element name="ChangePinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangePinResult" nillable="true" type="tns:CmsWsApiChangePinResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiChangePinResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiChangePinParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiChangePinResult" nillable="true" type="tns:CmsWsApiChangePinResult" />
+  <xs:element name="UnblockPin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiUnblockPinParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiUnblockPinParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiUnblockPinParam" nillable="true" type="tns:CmsWsApiUnblockPinParam" />
+  <xs:element name="UnblockPinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnblockPinResult" nillable="true" type="tns:CmsWsApiUnblockPinResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiUnblockPinResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiUnblockPinParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiUnblockPinResult" nillable="true" type="tns:CmsWsApiUnblockPinResult" />
+  <xs:element name="GenerateUnblockCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiGenerateUnblockCodeParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGenerateUnblockCodeParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Challenge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Csn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGenerateUnblockCodeParam" nillable="true" type="tns:CmsWsApiGenerateUnblockCodeParam" />
+  <xs:element name="GenerateUnblockCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateUnblockCodeResult" nillable="true" type="tns:CmsWsApiGenerateUnblockCodeResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGenerateUnblockCodeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cryptogram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Otp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiGenerateUnblockCodeParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGenerateUnblockCodeResult" nillable="true" type="tns:CmsWsApiGenerateUnblockCodeResult" />
+  <xs:element name="UpdateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiUpdateCardParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiUpdateCardParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Csn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiUpdateCardParam" nillable="true" type="tns:CmsWsApiUpdateCardParam" />
+  <xs:element name="UpdateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCardResult" nillable="true" type="tns:CmsWsApiUpdateCardResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiUpdateCardResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiUpdateCardParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiUpdateCardResult" nillable="true" type="tns:CmsWsApiUpdateCardResult" />
+  <xs:element name="RequestVeryGeneric">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiVeryGenericParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiVeryGenericParam">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q3:ArrayOfKeyValueOfstringArrayOfKeyValueOfanyTypeanyTypety7Ep6D1" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiVeryGenericParam" nillable="true" type="tns:CmsWsApiVeryGenericParam" />
+  <xs:element name="RequestVeryGenericResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestVeryGenericResult" nillable="true" type="tns:CmsWsApiVeryGenericResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiVeryGenericResult">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q4:ArrayOfKeyValueOfstringArrayOfKeyValueOfanyTypeanyTypety7Ep6D1" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiVeryGenericParam" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiVeryGenericResult" nillable="true" type="tns:CmsWsApiVeryGenericResult" />
+  <xs:element name="ReadRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiReadRecordParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiReadRecordParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiReadRecordParam" nillable="true" type="tns:CmsWsApiReadRecordParam" />
+  <xs:element name="ReadRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadRecordResult" nillable="true" type="tns:CmsWsApiReadRecordResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiReadRecordResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiReadRecordParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiReadRecordResult" nillable="true" type="tns:CmsWsApiReadRecordResult" />
+  <xs:element name="GetRecord1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiGetRecord1Param" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecord1Param">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Index" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="SectionStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecord1Param" nillable="true" type="tns:CmsWsApiGetRecord1Param" />
+  <xs:element name="GetRecord1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRecord1Result" nillable="true" type="tns:CmsWsApiGetRecord1Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecord1Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiGetRecord1Param" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecord1Result" nillable="true" type="tns:CmsWsApiGetRecord1Result" />
+  <xs:element name="GetRecordMaxIdx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiGetRecordMaxIdxParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecordMaxIdxParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="SectionStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecordMaxIdxParam" nillable="true" type="tns:CmsWsApiGetRecordMaxIdxParam" />
+  <xs:element name="GetRecordMaxIdxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRecordMaxIdxResult" nillable="true" type="tns:CmsWsApiGetRecordMaxIdxResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecordMaxIdxResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiGetRecordMaxIdxParam" />
+      <xs:element minOccurs="0" name="Result" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecordMaxIdxResult" nillable="true" type="tns:CmsWsApiGetRecordMaxIdxResult" />
+  <xs:element name="GetRecordKey1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiGetRecordKey1Param" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecordKey1Param">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Index" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="SectionStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecordKey1Param" nillable="true" type="tns:CmsWsApiGetRecordKey1Param" />
+  <xs:element name="GetRecordKey1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRecordKey1Result" nillable="true" type="tns:CmsWsApiGetRecordKey1Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecordKey1Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiGetRecordKey1Param" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecordKey1Result" nillable="true" type="tns:CmsWsApiGetRecordKey1Result" />
+  <xs:element name="GetRecordIdx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="oApiSession" nillable="true" type="tns:CmsWsApiApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsApiGetRecordIdxParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecordIdxParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueId" nillable="true" type="tns:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="RecordId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecordIdxParam" nillable="true" type="tns:CmsWsApiGetRecordIdxParam" />
+  <xs:element name="GetRecordIdxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRecordIdxResult" nillable="true" type="tns:CmsWsApiGetRecordIdxResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsApiGetRecordIdxResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsApiGetRecordIdxParam" />
+      <xs:element minOccurs="0" name="Result" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsApiGetRecordIdxResult" nillable="true" type="tns:CmsWsApiGetRecordIdxResult" />
+  <xs:complexType name="CmsWsServiceApiSession">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CmsWsApiApiSession">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthId" type="xs:unsignedInt" />
+          <xs:element minOccurs="0" name="AuthTicket" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiSession" nillable="true" type="tns:CmsWsServiceApiSession" />
+</xs:schema>

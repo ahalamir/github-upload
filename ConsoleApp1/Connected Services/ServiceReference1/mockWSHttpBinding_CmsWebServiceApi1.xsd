@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://versatilesecurity.com/lifecycleapi/" elementFormDefault="qualified" targetNamespace="http://versatilesecurity.com/lifecycleapi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1.xsd" namespace="http://versatilesecurity.com/api/" />
+  <xs:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api.xsd" namespace="http://versatilesecurity.com/serviceapi/" />
+  <xs:element name="CheckOnline">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q1:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckOnlineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://versatilesecurity.com/api/" minOccurs="0" name="CheckOnlineResult" nillable="true" type="q2:CmsWsApiClidOnlineResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q3:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResetCounter" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://versatilesecurity.com/api/" minOccurs="0" name="CheckPingResult" nillable="true" type="q4:CmsWsApiClidPingResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApiServiceVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApiServiceVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetApiServiceVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCmsServiceVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q5:CmsWsServiceApiSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCmsServiceVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCmsServiceVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q6:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClientInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://versatilesecurity.com/api/" minOccurs="0" name="GetClientInfoResult" nillable="true" type="q7:CmsWsApiClidInfoResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchIssuance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q8:CmsWsServiceApiSession" />
+        <xs:element xmlns:q9="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="param" nillable="true" type="q9:CmsWsLifecycleApiBatchIssuanceParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchIssuanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="BatchIssuanceResult" nillable="true" type="q10:CmsWsLifecycleApiBatchIssuanceResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q11:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="ICCSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dwRevokationReason" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="RevokeCardResult" nillable="true" type="q12:CmsWsLifecycleApiCardActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InactivateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q13:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="ICCSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InactivateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="InactivateCardResult" nillable="true" type="q14:CmsWsLifecycleApiCardActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q15:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="ICCSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="ActivateCardResult" nillable="true" type="q16:CmsWsLifecycleApiCardActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q17:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="ICCSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="UnlockCardResult" nillable="true" type="q18:CmsWsLifecycleApiCardActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q19:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="ICCSN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="InitiateCardResult" nillable="true" type="q20:CmsWsLifecycleApiCardActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q21:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="ICCSN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Reason" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" name="ApproveComment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://versatilesecurity.com/serviceapi/" minOccurs="0" name="DeleteCardResult" nillable="true" type="q22:CmsWsLifecycleApiCardActionResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://versatilesecurity.com/api/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://versatilesecurity.com/serviceapi/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://versatilesecurity.com/lifecycleapi/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CmsWebServiceApiImpl" targetNamespace="http://versatilesecurity.com/api/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_CmsWebServiceApi_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_CmsWebServiceServiceApi_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_CmsWebServiceLifecycleApi_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://versatilesecurity.com/serviceapi/" location="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api.wsdl" />
+  <wsdl:import namespace="http://versatilesecurity.com/lifecycleapi/" location="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2.wsdl" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://versatilesecurity.com/api/Imports">
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1.xsd" namespace="http://versatilesecurity.com/api/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CmsWebServiceApi_RequestVeryGeneric_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordKey1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordKey1" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetClientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_ReadRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadRecord" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetCLID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCLIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordIdx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordIdxResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordIdx_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_ChangePin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePinResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplates" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_RevokeCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_Issue_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetCLID_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecord1_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_TestPing_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_Issue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_RequestVeryGeneric_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestVeryGenericResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_IsCLID_online_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCLID_online" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecord1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecord1Response" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordMaxIdx_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMaxIdx" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetClientInfo_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_TestPing_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestPing" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_IsCLID_online_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCLID_onlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_BatchIssue_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_UnblockPin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnblockPin" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_RequestVeryGeneric_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestVeryGeneric" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GenerateUnblockCode_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetVersion_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_RevokeCard_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordKey1_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GenerateUnblockCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateUnblockCode" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordKey1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordKey1Response" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecord1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecord1" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetTemplates_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_ChangePin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePin" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_UpdateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordMaxIdx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMaxIdxResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_ReadRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_UnblockPin_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_Issue_InputMessage">
+    <wsdl:part name="parameters" element="tns:Issue" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_CanPerformTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanPerformTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_RevokeCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordMaxIdx_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_BatchIssue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BatchIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_TestPing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetRecordIdx_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordIdx" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GenerateUnblockCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateUnblockCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_ReadRecord_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_CanPerformTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanPerformTasks" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_IsCLID_online_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetClientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_GetCLID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCLID" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_UpdateCard_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_UpdateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_ChangePin_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_UnblockPin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnblockPinResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_BatchIssue_InputMessage">
+    <wsdl:part name="parameters" element="tns:BatchIssue" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceApi_CanPerformTasks_OperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:portType name="CmsWebServiceApi">
+    <wsdl:operation name="GetVersion">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetVersion" message="tns:CmsWebServiceApi_GetVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetVersionResponse" message="tns:CmsWebServiceApi_GetVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetVersionOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetVersion_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCLID">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetCLID" message="tns:CmsWebServiceApi_GetCLID_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetCLIDResponse" message="tns:CmsWebServiceApi_GetCLID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetCLIDOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetCLID_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCLID_online">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/IsCLID_online" message="tns:CmsWebServiceApi_IsCLID_online_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/IsCLID_onlineResponse" message="tns:CmsWebServiceApi_IsCLID_online_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/IsCLID_onlineOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_IsCLID_online_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestPing">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/TestPing" message="tns:CmsWebServiceApi_TestPing_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/TestPingResponse" message="tns:CmsWebServiceApi_TestPing_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/TestPingOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_TestPing_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetClientInfo" message="tns:CmsWebServiceApi_GetClientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetClientInfoResponse" message="tns:CmsWebServiceApi_GetClientInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetClientInfoOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetClientInfo_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetTemplates" message="tns:CmsWebServiceApi_GetTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetTemplatesResponse" message="tns:CmsWebServiceApi_GetTemplates_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetTemplatesOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetTemplates_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Issue">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/Issue" message="tns:CmsWebServiceApi_Issue_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/IssueResponse" message="tns:CmsWebServiceApi_Issue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/IssueOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_Issue_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchIssue">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/BatchIssue" message="tns:CmsWebServiceApi_BatchIssue_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/BatchIssueResponse" message="tns:CmsWebServiceApi_BatchIssue_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/BatchIssueOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_BatchIssue_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanPerformTasks">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/CanPerformTasks" message="tns:CmsWebServiceApi_CanPerformTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/CanPerformTasksResponse" message="tns:CmsWebServiceApi_CanPerformTasks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/CanPerformTasksOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_CanPerformTasks_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/RevokeCard" message="tns:CmsWebServiceApi_RevokeCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/RevokeCardResponse" message="tns:CmsWebServiceApi_RevokeCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/RevokeCardOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_RevokeCard_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePin">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/ChangePin" message="tns:CmsWebServiceApi_ChangePin_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/ChangePinResponse" message="tns:CmsWebServiceApi_ChangePin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/ChangePinOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_ChangePin_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnblockPin">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/UnblockPin" message="tns:CmsWebServiceApi_UnblockPin_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/UnblockPinResponse" message="tns:CmsWebServiceApi_UnblockPin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/UnblockPinOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_UnblockPin_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateUnblockCode">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GenerateUnblockCode" message="tns:CmsWebServiceApi_GenerateUnblockCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GenerateUnblockCodeResponse" message="tns:CmsWebServiceApi_GenerateUnblockCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GenerateUnblockCodeOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GenerateUnblockCode_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/UpdateCard" message="tns:CmsWebServiceApi_UpdateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/UpdateCardResponse" message="tns:CmsWebServiceApi_UpdateCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/UpdateCardOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_UpdateCard_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestVeryGeneric">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/RequestVeryGeneric" message="tns:CmsWebServiceApi_RequestVeryGeneric_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/RequestVeryGenericResponse" message="tns:CmsWebServiceApi_RequestVeryGeneric_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/RequestVeryGenericOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_RequestVeryGeneric_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRecord">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/ReadRecord" message="tns:CmsWebServiceApi_ReadRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/ReadRecordResponse" message="tns:CmsWebServiceApi_ReadRecord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/ReadRecordOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_ReadRecord_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecord1">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecord1" message="tns:CmsWebServiceApi_GetRecord1_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecord1Response" message="tns:CmsWebServiceApi_GetRecord1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecord1OperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetRecord1_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMaxIdx">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordMaxIdx" message="tns:CmsWebServiceApi_GetRecordMaxIdx_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordMaxIdxResponse" message="tns:CmsWebServiceApi_GetRecordMaxIdx_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordMaxIdxOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetRecordMaxIdx_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordKey1">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordKey1" message="tns:CmsWebServiceApi_GetRecordKey1_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordKey1Response" message="tns:CmsWebServiceApi_GetRecordKey1_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordKey1OperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetRecordKey1_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordIdx">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordIdx" message="tns:CmsWebServiceApi_GetRecordIdx_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordIdxResponse" message="tns:CmsWebServiceApi_GetRecordIdx_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordIdxOperationExecutionFaultFault" name="OperationExecutionFaultFault" message="tns:CmsWebServiceApi_GetRecordIdx_OperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_CmsWebServiceApi" type="tns:CmsWebServiceApi">
+    <wsp:PolicyReference URI="#WSHttpBinding_CmsWebServiceApi_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVersion">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCLID">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetCLID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsCLID_online">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/IsCLID_online" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TestPing">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/TestPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Issue">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/Issue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BatchIssue">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/BatchIssue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CanPerformTasks">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/CanPerformTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/RevokeCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePin">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/ChangePin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnblockPin">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/UnblockPin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateUnblockCode">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GenerateUnblockCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/UpdateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVeryGeneric">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/RequestVeryGeneric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRecord">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/ReadRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecord1">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecord1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMaxIdx">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordMaxIdx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordKey1">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordKey1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordIdx">
+      <soap12:operation soapAction="http://versatilesecurity.com/api/CmsWebServiceApi/GetRecordIdx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="OperationExecutionFaultFault">
+        <soap12:fault use="literal" name="OperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_CmsWebServiceServiceApi" type="i0:CmsWebServiceServiceApi">
+    <wsp:PolicyReference URI="#WSHttpBinding_CmsWebServiceServiceApi_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceApiGetVersion">
+      <soap12:operation soapAction="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiGetServiceVersion">
+      <soap12:operation soapAction="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetServiceVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiGenerateUnblockCryptogram">
+      <soap12:operation soapAction="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCryptogram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiGenerateUnblockCode">
+      <soap12:operation soapAction="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiQueryCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiQueryCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_CmsWebServiceLifecycleApi" type="i1:CmsWebServiceLifecycleApi">
+    <wsp:PolicyReference URI="#WSHttpBinding_CmsWebServiceLifecycleApi_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckOnline">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPing">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/CheckPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApiServiceVersion">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetApiServiceVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCmsServiceVersion">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetCmsServiceVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/GetClientInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BatchIssuance">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/BatchIssuance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/RevokeCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InactivateCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InactivateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/ActivateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/UnlockCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InitiateCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/InitiateCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCard">
+      <soap12:operation soapAction="http://versatilesecurity.com/lifecycleapi/CmsWebServiceLifecycleApi/DeleteCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServiceApiOperationExecutionFaultFault">
+        <soap12:fault use="literal" name="ServiceApiOperationExecutionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CmsWebServiceApiImpl">
+    <wsdl:port name="WSHttpBinding_CmsWebServiceLifecycleApi" binding="tns:WSHttpBinding_CmsWebServiceLifecycleApi">
+      <soap12:address location="http://vseccms.soap.api.local:8546/lifecycleapi" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://vseccms.soap.api.local:8546/lifecycleapi</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_CmsWebServiceServiceApi" binding="tns:WSHttpBinding_CmsWebServiceServiceApi">
+      <soap12:address location="http://vseccms.soap.api.local:8546/serviceapi" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://vseccms.soap.api.local:8546/serviceapi</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_CmsWebServiceApi" binding="tns:WSHttpBinding_CmsWebServiceApi">
+      <soap12:address location="http://AHALAMIR-SI:8088/mockWSHttpBinding_CmsWebServiceApi" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://vseccms.soap.api.local:8546/api</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

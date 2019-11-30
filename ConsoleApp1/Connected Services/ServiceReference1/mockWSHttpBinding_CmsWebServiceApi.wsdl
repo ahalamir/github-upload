@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://versatilesecurity.com/serviceapi/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://versatilesecurity.com/serviceapi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://versatilesecurity.com/serviceapi/Imports">
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api.xsd" namespace="http://versatilesecurity.com/serviceapi/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1.xsd" namespace="http://versatilesecurity.com/api/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGetVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGetVersion" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGetVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGetVersion_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGetServiceVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGetServiceVersion" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGetServiceVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGetServiceVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGetServiceVersion_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGenerateUnblockCryptogram_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGenerateUnblockCryptogram" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGenerateUnblockCryptogram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGenerateUnblockCryptogramResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGenerateUnblockCryptogram_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGenerateUnblockCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGenerateUnblockCode" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGenerateUnblockCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiGenerateUnblockCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiGenerateUnblockCode_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiQueryCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiQueryCard" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiQueryCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceApiQueryCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="CmsWebServiceServiceApi_ServiceApiQueryCard_ServiceApiOperationExecutionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ServiceApiOperationExecutionFault" />
+  </wsdl:message>
+  <wsdl:portType name="CmsWebServiceServiceApi">
+    <wsdl:operation name="ServiceApiGetVersion">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetVersion" message="tns:CmsWebServiceServiceApi_ServiceApiGetVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetVersionResponse" message="tns:CmsWebServiceServiceApi_ServiceApiGetVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetVersionServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceServiceApi_ServiceApiGetVersion_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiGetServiceVersion">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetServiceVersion" message="tns:CmsWebServiceServiceApi_ServiceApiGetServiceVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetServiceVersionResponse" message="tns:CmsWebServiceServiceApi_ServiceApiGetServiceVersion_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGetServiceVersionServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceServiceApi_ServiceApiGetServiceVersion_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiGenerateUnblockCryptogram">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCryptogram" message="tns:CmsWebServiceServiceApi_ServiceApiGenerateUnblockCryptogram_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCryptogramResponse" message="tns:CmsWebServiceServiceApi_ServiceApiGenerateUnblockCryptogram_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCryptogramServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceServiceApi_ServiceApiGenerateUnblockCryptogram_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiGenerateUnblockCode">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCode" message="tns:CmsWebServiceServiceApi_ServiceApiGenerateUnblockCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCodeResponse" message="tns:CmsWebServiceServiceApi_ServiceApiGenerateUnblockCode_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiGenerateUnblockCodeServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceServiceApi_ServiceApiGenerateUnblockCode_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceApiQueryCard">
+      <wsdl:input wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiQueryCard" message="tns:CmsWebServiceServiceApi_ServiceApiQueryCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiQueryCardResponse" message="tns:CmsWebServiceServiceApi_ServiceApiQueryCard_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://versatilesecurity.com/serviceapi/CmsWebServiceServiceApi/ServiceApiQueryCardServiceApiOperationExecutionFaultFault" name="ServiceApiOperationExecutionFaultFault" message="tns:CmsWebServiceServiceApi_ServiceApiQueryCard_ServiceApiOperationExecutionFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

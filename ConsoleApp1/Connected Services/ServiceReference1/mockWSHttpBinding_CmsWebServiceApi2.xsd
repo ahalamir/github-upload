@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://versatilesecurity.com/serviceapi/" elementFormDefault="qualified" targetNamespace="http://versatilesecurity.com/serviceapi/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1.xsd" namespace="http://versatilesecurity.com/api/" />
+  <xs:import schemaLocation="mockWSHttpBinding_CmsWebServiceApi?WSDL&amp;interface=WSHttpBinding_CmsWebServiceApi&amp;part=api_1_2.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ServiceApiGetVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceApiGetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceApiGetVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ServiceApiOperationExecutionFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrCode" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ErrMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorStack" nillable="true" type="tns:CmsWsServiceApiErrorStack" />
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceApiOperationExecutionFault" nillable="true" type="tns:ServiceApiOperationExecutionFault" />
+  <xs:complexType name="CmsWsServiceApiErrorStack">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrInfos" nillable="true" type="tns:ArrayOfCmsWsServiceApiErrorInfo" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiErrorStack" nillable="true" type="tns:CmsWsServiceApiErrorStack" />
+  <xs:complexType name="ArrayOfCmsWsServiceApiErrorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CmsWsServiceApiErrorInfo" nillable="true" type="tns:CmsWsServiceApiErrorInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCmsWsServiceApiErrorInfo" nillable="true" type="tns:ArrayOfCmsWsServiceApiErrorInfo" />
+  <xs:complexType name="CmsWsServiceApiErrorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrCode" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ErrMsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineNum" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiErrorInfo" nillable="true" type="tns:CmsWsServiceApiErrorInfo" />
+  <xs:element name="ServiceApiGetServiceVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q1:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsServiceApiServiceVersionParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiServiceVersionParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedInt" />
+      <xs:element xmlns:q2="http://versatilesecurity.com/api/" minOccurs="0" name="QueueId" nillable="true" type="q2:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiServiceVersionParam" nillable="true" type="tns:CmsWsServiceApiServiceVersionParam" />
+  <xs:element name="ServiceApiGetServiceVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceApiGetServiceVersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceApiGenerateUnblockCryptogram">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q3:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCryptogramParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiGenerateUnblockCryptogramParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Challenge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Csn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedInt" />
+      <xs:element xmlns:q4="http://versatilesecurity.com/api/" minOccurs="0" name="QueueId" nillable="true" type="q4:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiGenerateUnblockCryptogramParam" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCryptogramParam" />
+  <xs:element name="ServiceApiGenerateUnblockCryptogramResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceApiGenerateUnblockCryptogramResult" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCryptogramResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiGenerateUnblockCryptogramResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cryptogram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCryptogramParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiGenerateUnblockCryptogramResult" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCryptogramResult" />
+  <xs:element name="ServiceApiGenerateUnblockCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q5:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCodeParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiGenerateUnblockCodeParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Challenge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Csn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedInt" />
+      <xs:element xmlns:q6="http://versatilesecurity.com/api/" minOccurs="0" name="QueueId" nillable="true" type="q6:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiGenerateUnblockCodeParam" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCodeParam" />
+  <xs:element name="ServiceApiGenerateUnblockCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceApiGenerateUnblockCodeResult" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCodeResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiGenerateUnblockCodeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Otp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCodeParam" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiGenerateUnblockCodeResult" nillable="true" type="tns:CmsWsServiceApiGenerateUnblockCodeResult" />
+  <xs:element name="ServiceApiQueryCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://versatilesecurity.com/api/" minOccurs="0" name="oApiSession" nillable="true" type="q7:CmsWsServiceApiSession" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="tns:CmsWsServiceApiQueryCardParam" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiQueryCardParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ParamInt" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ParamStr" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://versatilesecurity.com/api/" minOccurs="0" name="QueueId" nillable="true" type="q8:CmsWsApiQueueId" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiQueryCardParam" nillable="true" type="tns:CmsWsServiceApiQueryCardParam" />
+  <xs:element name="ServiceApiQueryCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceApiQueryCardResult" nillable="true" type="tns:CmsWsServiceApiQueryCardResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CmsWsServiceApiQueryCardResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardInfos" nillable="true" type="tns:ArrayOfCmsWsServiceApiCardInfo" />
+      <xs:element minOccurs="0" name="QueueInfo" nillable="true" type="tns:CmsWsServiceApiQueryCardParam" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiQueryCardResult" nillable="true" type="tns:CmsWsServiceApiQueryCardResult" />
+  <xs:complexType name="ArrayOfCmsWsServiceApiCardInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CmsWsServiceApiCardInfo" nillable="true" type="tns:CmsWsServiceApiCardInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCmsWsServiceApiCardInfo" nillable="true" type="tns:ArrayOfCmsWsServiceApiCardInfo" />
+  <xs:complexType name="CmsWsServiceApiCardInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardTemplate_Id" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="CardTemplate_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="StatusStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsServiceApiCardInfo" nillable="true" type="tns:CmsWsServiceApiCardInfo" />
+  <xs:complexType name="CmsWsLifecycleApiBatchIssuanceParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LangId" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="OperatorPin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Option" type="xs:unsignedInt" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TemplateId" nillable="true" type="q9:ArrayOfunsignedInt" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TransactionId" nillable="true" type="q10:ArrayOfstring" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserId" nillable="true" type="q11:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsLifecycleApiBatchIssuanceParam" nillable="true" type="tns:CmsWsLifecycleApiBatchIssuanceParam" />
+  <xs:complexType name="CmsWsLifecycleApiBatchIssuanceResult">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProgressPollingId" nillable="true" type="q12:ArrayOfstring" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Result" nillable="true" type="q13:ArrayOfstring" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TransactionId" nillable="true" type="q14:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsLifecycleApiBatchIssuanceResult" nillable="true" type="tns:CmsWsLifecycleApiBatchIssuanceResult" />
+  <xs:complexType name="CmsWsLifecycleApiCardActionResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Return" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Version" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="errCode" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CmsWsLifecycleApiCardActionResult" nillable="true" type="tns:CmsWsLifecycleApiCardActionResult" />
+</xs:schema>
